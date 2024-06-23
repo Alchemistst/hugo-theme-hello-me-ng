@@ -10,7 +10,7 @@
 
   &-date {
     &:after {
-      content: '—';
+      content: "—";
     }
   }
 
@@ -39,6 +39,14 @@
 
   &-content {
     margin-top: 30px;
+
+    a {
+      color: #fe5186;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 
   &-cover {
@@ -82,11 +90,15 @@
       &::before {
         content: "#";
       }
+
+      a {
+        text-decoration: none;
+      }
     }
 
     .feather {
       display: inline-block;
-      vertical-align: -.125em;
+      vertical-align: -0.125em;
       width: 1em;
       height: 1em;
     }
@@ -135,18 +147,18 @@
         background: $dark-background;
         color: $dark-color-secondary;
       }
-    
+
       @media (prefers-color-scheme: light) {
         background: $light-background;
         color: $light-color-secondary;
       }
-    
-      [data-theme=dark] & {
+
+      [data-theme="dark"] & {
         background: $dark-background;
         color: $dark-color-secondary;
       }
-    
-      [data-theme=light] & {
+
+      [data-theme="light"] & {
         background: $light-background;
         color: $light-color-secondary;
       }
@@ -197,11 +209,11 @@
     background: $light-background-secondary;
   }
 
-  [data-theme=dark] & {
+  [data-theme="dark"] & {
     background: $dark-background-secondary;
   }
 
-  [data-theme=light] & {
+  [data-theme="light"] & {
     background: $light-background-secondary;
   }
 

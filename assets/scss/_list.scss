@@ -64,6 +64,10 @@
       }
     }
 
+    &-item :hover {
+      color: #fe5186;
+    }
+    
     &-item {
       border-bottom: 1px grey dashed;
 

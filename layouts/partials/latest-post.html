@@ -1,0 +1,11 @@
+{{ $pages := .Site.Pages }}
+{{ $sortedPages := sort $pages "Date" "desc" }}
+{{ $latestPage := index $sortedPages 0 }}
+<div class="latest-post">
+    <span class="accent">Latest post: </span>
+        <span class="posts">
+            <a href="{{$latestPage.Permalink}}">
+                <span class="post-title">{{ $latestPage.Title }}</span>
+            </a>
+        </span>
+</div>

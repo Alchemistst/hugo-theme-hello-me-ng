@@ -1,0 +1,13 @@
+.latest-post {
+    padding: 0 40px;
+    .posts {
+        padding: 0;
+        a {
+            cursor: pointer;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
