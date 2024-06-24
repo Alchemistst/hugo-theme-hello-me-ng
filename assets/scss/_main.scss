@@ -222,29 +222,29 @@ code {
   background: $light-background-secondary;
 
   @media (prefers-color-scheme: dark) {
-    background: $dark-background-secondary;
+    background: $dark-code-background;
   }
 
   @media (prefers-color-scheme: light) {
-    background: $light-background-secondary;
+    background: $light-code-background;
   }
 
   [data-theme=dark] & {
-    background: $dark-background-secondary;
+    background: $dark-code-background;
   }
 
   [data-theme=light] & {
-    background: $light-background-secondary;
+    background: $light-code-background;
   }
 }
 
 pre {
   [data-theme=dark] & {
-    background-color: $dark-background-secondary;
+    background-color: $dark-code-background;
   }
 
   [data-theme=light] & {
-    background-color: $light-background-secondary;
+    background-color: $light-code-background;
   }
 
   padding: 10px 10px 10px 20px;
