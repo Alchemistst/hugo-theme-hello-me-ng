@@ -1,4 +1,4 @@
-{{ $pages := .Site.Pages }}
+{{ $pages := where .Site.Pages "Type" "posts" }}
 {{ $sortedPages := sort $pages "Date" "desc" }}
 {{ $latestPage := index $sortedPages 0 }}
 <div class="latest-post">
