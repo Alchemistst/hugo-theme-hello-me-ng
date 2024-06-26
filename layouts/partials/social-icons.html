@@ -1,3 +1,20 @@
 {{ range . -}}
-    &nbsp; <a href="{{ .url }}" {{if eq .nonewpage 0}} target="_blank" {{end}} rel="me noopener {{ .rel }}" title="{{ .name | humanize }}">{{ partial "svg.html" . }}</a> &nbsp;
+{{ if in .url "@" }}
+{{- $parts := split .url "@" -}}
+{{- $user := (index $parts 0) -}}
+{{- $domain := (index $parts 1) | default "" -}}
+{{- $fingerprint := md5 (print .url (index (seq 999 | shuffle) 0)) | truncate 8 "" -}}
+<span  id="span-{{ $fingerprint }}"></span>
+<script id="script-{{ $fingerprint }}">
+    var scriptTag = document.getElementById("script-{{ $fingerprint }}");
+    var link = document.createElement("a");
+    var address = "{{ range $index := seq (sub (len $user) 1) 0}}{{ substr $user $index 1}}{{ end }}".split('').reverse().join(''){{ with $domain }} + "@" + "{{ range $index := seq (sub (len $domain) 1) 0}}{{ substr $domain $index 1}}{{ end }}".split('').reverse().join(''){{ end }};
+    link.href = address;
+    link.innerHTML = '{{ partial "svg.html" . }}';
+    scriptTag.parentElement.insertBefore(link, scriptTag.previousElementSibling);
+    scriptTag.parentElement.removeChild(scriptTag.previousElementSibling);
+  </script>
+{{else}}
+&nbsp; <a href="{{ .url }}" {{if eq .nonewpage 0}} target="_blank" {{end}} rel="me noopener {{ .rel }}" title="{{ .name | humanize }}">{{ partial "svg.html" . }}</a> &nbsp;
+{{ end }}
 {{- end -}}
