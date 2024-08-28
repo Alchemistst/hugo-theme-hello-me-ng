@@ -15,6 +15,6 @@
     scriptTag.parentElement.removeChild(scriptTag.previousElementSibling);
   </script>
 {{else}}
-&nbsp; <a href="{{ .url }}" {{if eq .nonewpage 0}} target="_blank" {{end}} rel="me noopener {{ .rel }}" title="{{ .name | humanize }}">{{ partial "svg.html" . }}</a> &nbsp;
+<a href="{{ .url }}" {{if eq .nonewpage 0}} target="_blank" {{end}} rel="me noopener {{ .rel }}" title="{{ .name | humanize }}">{{ partial "svg.html" . }}</a> &nbsp;
 {{ end }}
 {{- end -}}
